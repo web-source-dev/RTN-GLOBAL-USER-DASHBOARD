@@ -10,6 +10,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import CssBaseline from '@mui/material/CssBaseline';
 import PaymentPage from './Pages/PaymentPage';
 import OrdersIframe from './components/User/OrdersManage';
+import UserHome from './components/User/UserHome';
 const App = () => {
   return (
     <AuthProvider>
@@ -18,6 +19,7 @@ const App = () => {
     <Router>
         <Routes>
             <Route path="/dashboard/user" element={<UserDashboard />}>
+              <Route path="" element={<UserHome />} />
               <Route path="support" element={<UserSupportTickets />} />
               <Route path="applications" element={<UserJobApplications />} />
               <Route path="consultations" element={<UserConsultations />} />

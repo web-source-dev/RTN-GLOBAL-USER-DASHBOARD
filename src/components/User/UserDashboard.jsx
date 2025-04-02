@@ -37,7 +37,13 @@ const UserDashboard = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const { user, loading, logout } = useAuth();
+  const { user, loading, logout,isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/auth/login`;
+    }
+  }, [isAuthenticated]);
 
   const handleProfileMenuOpen = (event) => {
     setProfileMenuAnchor(event.currentTarget);
