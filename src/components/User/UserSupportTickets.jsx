@@ -12,7 +12,7 @@ const UserSupportTickets = () => {
   const [newTicket, setNewTicket] = useState({
     issueCategory: '',
     priority: '',
-    subject: '',
+    issueTitle: '',
     description: ''
   });
 
@@ -109,7 +109,7 @@ const UserSupportTickets = () => {
           <TableHead>
             <TableRow>
               <TableCell sx={{ fontWeight: 'bold' }}>Ticket Number</TableCell>
-              <TableCell sx={{ fontWeight: 'bold' }}>Subject</TableCell>
+              <TableCell sx={{ fontWeight: 'bold' }}>Issue</TableCell>
               <TableCell sx={{ fontWeight: 'bold' }}>Category</TableCell>
               <TableCell sx={{ fontWeight: 'bold' }}>Priority</TableCell>
               <TableCell sx={{ fontWeight: 'bold' }}>Status</TableCell>
@@ -135,7 +135,7 @@ const UserSupportTickets = () => {
                   }}
                 >
                   <TableCell>{ticket.ticketNumber}</TableCell>
-                  <TableCell>{ticket.subject}</TableCell>
+                  <TableCell>{ticket.issueTitle}</TableCell>
                   <TableCell>{ticket.issueCategory}</TableCell>
                   <TableCell>
                     <Chip
